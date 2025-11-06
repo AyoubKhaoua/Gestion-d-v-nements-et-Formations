@@ -1,45 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link href="./output.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body >
-   <header class="flex justify-between items-center py-1.5 px-10 font-bold">
-       <h2><samp class="text-blue-500 uppercase">new</samp>project</h2>
-       <nav class="flex gap-3 ">
-        <a href="" class="hover:text-blue-600 font-serif">acceuil</a>
-        <a href="" class="hover:text-blue-600">formation</a>
-        <a href="" class="hover:text-blue-600">evenement</a>
-        <a href="" class="hover:text-blue-600">mini jeux</a>
-       </nav>
-       <div>
-        <button class="border border-blue-400 px-3 py-1 rounded-sm hover:bg-amber-50">log in</button>
-        <button class="bg-blue-400 px-3 py-1 rounded-sm hover:bg-blue-600">sing up</button>
-       </div>
-   </header> 
-   <main>
-       <section class="h-[80vh] bg-[#f5f5ff] w-full flex  py-1.5 px-10 gap-3">
-              <div class="flex flex-col gap-5 my-auto  w-full">
-                 <h1 class="text-5xl font-bold"><span class="text-[#1C1D7F]">Master New Skills</span><br> at Your Own Pace</h1>
-                 <p class="text-gray-400 text-xl">Join over 50,000 students learning from world-class instructors.<br> Get personalized tutoring, interactive courses, and achieve your goals faster.</p>
-                 <div class="flex gap-3">
-                    <p>1-on-1 Tutoring</p>
-                    <p>Flexible Scheduling</p>
-                    <p>Expert Instructors</p>
-                 </div>
-                 <div class="flex gap-6">
-                    <button class="px-6 py-2 bg-[#1C1D7F] rounded-md text-amber-50">Start Learn</button>
-                    <button class="px-6 py-2 bg-transparent border rounded-md ">View All Formation</button>
-                 </div>
 
-              </div>
-              <div class="container m-auto w-full h-[60vh] p-2 bg-blue-100 rounded-md ">
-                <img class="w-full h-full rounded-lg" src="image/phoenix-esport-team-logo-with-purple-neon.jpg" alt="">
-              </div>
-       </section>
-   </main>
+<body>
+    <header class="flex justify-between items-center py-1.5 px-10 font-medium">
+        <h2><samp class="text-blue-500 uppercase">new</samp>project</h2>
+        <nav class="flex gap-3 ">
+            <a href="" class="hover:text-blue-600 transition-all duration-600">Acceuil</a>
+            <a href="" class="hover:text-blue-600 transition-all duration-600">Formation</a>
+            <a href="" class="hover:text-blue-600 transition-all duration-600">Evenement</a>
+            <a href="" class="hover:text-blue-600 transition-all duration-600">Mini jeux</a>
+        </nav>
+        <div>
+            <button
+                class="border border-blue-400 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700">log
+                in</button>
+            <button
+                class="bg-blue-400 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700">sing
+                up</button>
+        </div>
+    </header>
+    <main>
+        <section class="h-[80vh] bg-[#f5f5ff] w-full flex  py-1.5 px-10 gap-3">
+            <div class="flex flex-col gap-6 my-auto  w-full">
+                <h1 class="text-5xl font-bold"><span class="text-[#1C1D7F]">Master New Skills</span><br> at Your Own
+                    Pace</h1>
+                <p class="text-gray-400 text-xl">Join over 50,000 students learning from world-class instructors.<br>
+                    Get personalized tutoring, interactive courses, and achieve your goals faster.</p>
+                <div class="flex gap-3">
+                    <p><i class="fa-solid fa-check-double text-[#1C1D7F]"></i>1-on-1 Tutoring</p>
+                    <p><i class="fa-solid fa-check-double text-[#1C1D7F]"></i>Flexible Scheduling</p>
+                    <p><i class="fa-solid fa-check-double text-[#1C1D7F]"></i>Expert Instructors</p>
+                </div>
+                <div class="flex gap-6">
+                    <button
+                        class="px-6 py-2 bg-[#1C1D7F] rounded-md text-amber-50 hover:bg-[#140BFF] 0 transition-all duration-700">Start
+                        Learn</button>
+                    <button
+                        class="px-6 py-2 bg-transparent border rounded-md hover:bg-[#140BFF] hover:text-amber-50 transition-all duration-700">View
+                        All Formation</button>
+                </div>
+
+            </div>
+            <div class="container m-auto w-full h-[60vh] p-2 bg-blue-100 rounded-md relative">
+                <img class="w-full h-full rounded-lg " src="image/phoenix-esport-team-logo-with-purple-neon.jpg" alt="">
+                <div class="absolute top-0 left-0 z-10 bg-blue-100 rounded-md p-2">
+                    <p class="text-black text-[0.7rem]">95% Improvement</p>
+                    <p class="text-gray-500 text-[0.5rem]  ">Average Grade Boos</p>
+                </div>
+                <div class="absolute bottom-0 right-0 z-10 bg-blue-100 rounded-md p-2">
+                    <p class="text-black text-[0.7rem]">95% Improvement</p>
+                    <p class="text-gray-500 text-[0.5rem]  ">Average Grade Boos</p>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>

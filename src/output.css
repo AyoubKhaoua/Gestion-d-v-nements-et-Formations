@@ -21,6 +21,8 @@
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-gray-400: oklch(70.7% 0.022 261.325);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
+    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-xl: 1.25rem;
@@ -35,6 +37,7 @@
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
+    --font-weight-medium: 500;
     --font-weight-bold: 700;
     --radius-xs: 0.125rem;
     --radius-sm: 0.25rem;
@@ -43,6 +46,8 @@
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --blur-2xl: 40px;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -196,6 +201,27 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .right-0 {
+    right: calc(var(--spacing) * 0);
+  }
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
+  }
+  .z-10 {
+    z-index: 10;
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -258,6 +284,9 @@
   }
   .border-collapse {
     border-collapse: collapse;
+  }
+  .cursor-crosshair {
+    cursor: crosshair;
   }
   .resize {
     resize: both;
@@ -364,6 +393,9 @@
   .bg-white {
     background-color: var(--color-white);
   }
+  .to-0\% {
+    --tw-gradient-to-position: 0%;
+  }
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
@@ -418,15 +450,43 @@
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
   }
+  .text-\[0\.5rem\] {
+    font-size: 0.5rem;
+  }
+  .text-\[0\.7rem\] {
+    font-size: 0.7rem;
+  }
+  .text-\[0rem\] {
+    font-size: 0rem;
+  }
+  .text-\[1rem\] {
+    font-size: 1rem;
+  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
   .text-\[\#1C1D7F\] {
     color: #1C1D7F;
   }
+  .text-\[0\.\] {
+    color: 0.;
+  }
+  .text-\[0\.rem\] {
+    color: 0.rem;
+  }
   .text-amber-50 {
     color: var(--color-amber-50);
+  }
+  .text-amber-400 {
+    color: var(--color-amber-400);
+  }
+  .text-black {
+    color: var(--color-black);
   }
   .text-blue-400 {
     color: var(--color-blue-400);
@@ -437,15 +497,61 @@
   .text-gray-400 {
     color: var(--color-gray-400);
   }
+  .text-gray-500 {
+    color: var(--color-gray-500);
+  }
   .uppercase {
     text-transform: uppercase;
   }
   .underline {
     text-decoration-line: underline;
   }
+  .opacity-75 {
+    opacity: 75%;
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-200 {
+    --tw-duration: 200ms;
+    transition-duration: 200ms;
+  }
+  .duration-600 {
+    --tw-duration: 600ms;
+    transition-duration: 600ms;
+  }
+  .duration-700 {
+    --tw-duration: 700ms;
+    transition-duration: 700ms;
+  }
+  .duration-1000 {
+    --tw-duration: 1000ms;
+    transition-duration: 1000ms;
+  }
+  .hover\:bg-\[\#1C1D7F\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #1C1D7F;
+      }
+    }
+  }
+  .hover\:bg-\[\#140BFF\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #140BFF;
+      }
+    }
   }
   .hover\:bg-amber-50 {
     &:hover {
@@ -458,6 +564,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-blue-600);
+      }
+    }
+  }
+  .hover\:text-amber-50 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-amber-50);
       }
     }
   }
@@ -474,6 +587,48 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
@@ -483,12 +638,26 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
       --tw-font-weight: initial;
       --tw-outline-style: solid;
+      --tw-duration: initial;
     }
   }
 }
