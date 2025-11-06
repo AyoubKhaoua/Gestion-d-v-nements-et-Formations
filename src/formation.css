@@ -20,3 +20,8 @@
     background: linear-gradient(to right, #0000ff, #0000aa);
     border-radius: 8px;
 }
+.formation-headr{
+    background: linear-gradient(90deg, #1f2b74 0%, #0040FF 100%);
+    padding: 40px 20px;
+    border-radius: 20px 20px 0px 0px;
+}
