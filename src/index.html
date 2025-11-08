@@ -1,13 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link href="./output.css" rel="stylesheet">
+    <script defer src="formation.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-    <h1 class="fle"></h1>
-    
+    <header class="flex justify-between items-center py-1.5 px-10 font-medium">
+        <h2><samp class="text-blue-500 uppercase">new</samp>project</h2>
+        <nav class="flex gap-3 ">
+            <a href="" class="hover:text-blue-600 transition-all duration-600">Acceuil</a>
+            <a href="" class="hover:text-blue-600 transition-all duration-600">Formation</a>
+            <a href="" class="hover:text-blue-600 transition-all duration-600">Evenement</a>
+            <a href="" class="hover:text-blue-600 transition-all duration-600">Mini jeux</a>
+        </nav>
+        <div>
+            <button
+                class="border border-blue-400 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700">log
+                in</button>
+            <button
+                class="bg-blue-400 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700">sing
+                up</button>
+        </div>
+    </header>
+    <main>
+        <section class="h-[80vh] bg-[#f5f5ff] w-full flex  py-1.5 px-10 gap-3">
+            <div class="flex flex-col gap-6 my-auto  w-full">
+                <h1 class="text-5xl font-bold"><span class="bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-purple-500">Master New Skills</span><br> at Your Own
+                    Pace</h1>
+                <p class="text-gray-400 text-xl">Join over 50,000 students learning from world-class instructors.<br>
+                    Get personalized tutoring, interactive courses, and achieve your goals faster.</p>
+                <div class="flex gap-3">
+                    <p><i class="fa-solid fa-check-double text-[#1C1D7F]"></i>1-on-1 Tutoring</p>
+                    <p><i class="fa-solid fa-check-double text-[#1C1D7F]"></i>Flexible Scheduling</p>
+                    <p><i class="fa-solid fa-check-double text-[#1C1D7F]"></i>Expert Instructors</p>
+                </div>
+                <div class="flex gap-6">
+                    <button
+                        class="px-6 py-2 bg-[#1C1D7F] rounded-md text-amber-50 hover:bg-[#140BFF] 0 transition-all duration-700">Start
+                        Learn</button>
+                    <button
+                        class="px-6 py-2 bg-transparent border rounded-md hover:bg-[#140BFF] hover:text-amber-50 transition-all duration-700">View
+                        All Formation</button>
+                </div>
+                <div class="flex justify-between w-2/3">
+                    <div class="">
+                        <p class="text-blue-600 text-[1.5rem] font-medium text-center">50K+</p>
+                        <p class="text-gray-500 text-[0.7rem]">Happy Students</p>
+                    </div>
+                    <div class="">
+                        <p class="text-blue-600 text-[1.5rem] font-medium text-center">1000+</p>
+                        <p class="text-gray-500 text-[0.7rem]">Expert Tutors</p>
+                    </div>
+                    <div class="">
+                        <p class="text-blue-600 text-[1.5rem] font-medium text-center">98%</p>
+                        <p class="text-gray-500 text-[0.7rem]">Success Rate</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container m-auto w-full h-[60vh] p-2 bg-blue-100 rounded-lg relative">
+                <img class="w-full h-full rounded-lg " src="image/phoenix-esport-team-logo-with-purple-neon.jpg" alt="">
+                <div class="absolute top-0 left-0 z-10 bg-blue-100 rounded-md p-2">
+                    <p class="text-black text-[0.7rem]">95% Improvement</p>
+                    <p class="text-gray-500 text-[0.5rem]  ">Average Grade Boos</p>
+                </div>
+                <div class="absolute bottom-0 right-0 z-10 bg-blue-100 rounded-md px-3 py-2">
+                    <p class="text-black text-[0.7rem]">24/7 Support</p>
+                    <p class="text-gray-500 text-[0.5rem]">Always Available</p>
+                </div>
+            </div>
+        </section>
+        <section class="flex flex-col gap-6 my-16">
+            <h1 class="text-center text-gray-500">Trusted by students from top universities</h1>
+            <div class="flex justify-center gap-10 font-medium text-gray-400">
+                <p>Harvard</p>
+                <p>MIT</p>
+                <p>Stanford</p>
+                <p>Oxford</p>
+                <p>Cambridge</p>
+                <p>Yale</p>
+            </div>
+        </section>
+        <section class="bg-[#f5f5ff] w-full flex flex-col  py-1.5 px-10 gap-3">
+            <h1 class="text-center my">Popular Courses</h1>
+            <p class="text-center">Discover our most popular courses taught by expert instructors. Get personalized tutoring and achieve your academic goals.</p>
+              <div id="cards-container" class="grid md:grid-cols-3 sm:grid-cols-2 gap-6 border-blue-800 py-10 ">
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>
