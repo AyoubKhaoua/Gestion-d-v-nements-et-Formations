@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="./output.css" rel="stylesheet" />
-    <link href="./input.css" rel="stylesheet" />
   </head>
 
   <body class="">
@@ -21,6 +20,7 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit
       </p>
       <input
+        id="search"
         type="text"
         placeholder="Recherche un evenment "
         class="w-3/4 h-17 rounded-lg px-7 bg-amber-50"
@@ -45,30 +45,75 @@
         d="M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,208C672,203,768,117,864,101.3C960,85,1056,139,1152,160C1248,181,1344,171,1392,165.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
       ></path>
     </svg>
-    <div class="container w-full flex bg-white-950 justify-evenly h-full">
+    <h1 class="font-bold text-4xl text-center w-full">Events A venire</h1>
+    <div class="w-full flex bg-white-950 justify-evenly h-full">
       <div
-        class="w-1/4 h-60 mt-10 mb-20 rounded-2xl bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-hard-light relative"
+        class="w-1/4 h-60 mt-10 mb-20 rounded-2xl bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-hard-light relative animate-pulse"
       >
-        <button class="bg-amber-300 rounded-2xl w-30 absolute top-0 right-0">
+        <button class="bg-amber-300 rounded-2xl w-30 absolute top-3 right-3">
+          demain
+        </button>
+      </div>
+      <div
+        class="w-1/4 bg-amber-600 h-60 mt-10 mb-20 rounded-2xl relative bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+      >
+        <button class="bg-amber-300 rounded-2xl w-30 absolute top-3 right-3">
           Feautred
         </button>
       </div>
-      <div class="w-1/4 bg-amber-600 h-60 mt-10 mb-20 rounded-2xl relative">
-        <button class="bg-amber-300 rounded-2xl w-30 absolute top-0 right-0">
-          Feautred
-        </button>
-      </div>
-      <div class="w-1/4 bg-amber-600 h-60 mt-10 mb-20 rounded-2xl relative">
-        <button class="bg-amber-300 rounded-2xl w-30 absolute top-0 right-0">
+      <div
+        class="w-1/4 bg-amber-600 h-60 mt-10 mb-20 rounded-2xl relative bg-no-repeat transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')]"
+      >
+        <button class="bg-amber-300 rounded-2xl w-30 absolute top-3 right-3">
           Feautred
         </button>
       </div>
     </div>
     <!-- buttons -->
-    <div class="list-btns flex justify-around">
-      <button class="w-30 h-7 accent-[#140BFF] rounded-2xl">conference</button
-      ><button>atelier</button><button>club</button><button>autre</button>
+    <h1 class="font-bold text-4xl text-center w-full">Events Actual</h1>
+    <div class="list-btns flex justify-around h-20 w-full">
+      <button
+        class="conference bg-[#00b7db] h-10 rounded-3xl w-30 hover:bg-[#2b80ff] focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-opacity-75"
+        value="conférence"
+      >
+        conference</button
+      ><button
+        class="atelier bg-[#00b7db] h-10 rounded-3xl w-30 hover:bg-[#2b80ff] focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-opacity-75"
+        value="atelier"
+      >
+        atelier</button
+      ><button
+        class="club bg-[#00b7db] h-10 rounded-3xl w-30 hover:bg-[#2b80ff] focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-opacity-75"
+        value="club"
+      >
+        club</button
+      ><button
+        class="autre bg-[#00b7db] h-10 rounded-3xl w-30 hover:bg-[#2b80ff] focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-opacity-75"
+        value="autre"
+      >
+        autre
+      </button>
     </div>
+
+    <!-- container evenments  -->
+    <div class="events grid w-full grid-cols-3 gap-10"></div>
+    <!-- cree un evenment -->
+    <main
+      class="text-center bg-linear-to-r from-cyan-500 to-blue-500 w-full h-lvh box-border mt-10"
+    >
+      <span class="block text font-bold text-white text-8xl"
+        >Vous organisez un événement ?</span
+      >
+
+      <p class="text-xl py-10 text-white">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
+      </p>
+      <button
+        class="w-80 h-20 bg-white font-bold text-3xl rounded-2xl hover:bg-black hover:text-[#009ff0] transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+      >
+        Creer un evenement
+      </button>
+    </main>
     <script src="events.js"></script>
   </body>
 </html>
