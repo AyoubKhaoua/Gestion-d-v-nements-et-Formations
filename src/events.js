@@ -4,7 +4,9 @@ fetch("events.json")
     showEvents(data);
     filterEvent(data);
     findEvent(data);
+    changeForm();
   });
+
 //select the elements
 let partEvents = document.querySelector(".events");
 //select the btns
@@ -53,7 +55,6 @@ showEvents = (data) => {
 filterEvent = (data) => {
   listBtn.addEventListener("click", (e) => {
     const btnclicked = e.target.value;
-
     const dataFilter = data.filter((event) => event.type == btnclicked);
 
     showEvents(dataFilter);
@@ -72,3 +73,19 @@ findEvent = (data) => {
     showEvents(arravEvent);
   });
 };
+//creer un evinment
+//1-navige into formulaire for create event
+const navigateToForm = function (url) {
+  window.location.href = url;
+};
+//2-if chnage the type change the content of formulaire
+//2-1-1select the formulire and the inpute select
+let selectInput = document.getElementById("select-type");
+let form = document.getElementById("form");
+changeForm = (data) => {
+  selectInput.addEventListener("change", () => {
+    console.log(data);
+  });
+};
+//console.log(selectInput);
+//changeForm();
