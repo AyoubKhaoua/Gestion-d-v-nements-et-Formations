@@ -3,7 +3,7 @@ const cardsContainer=document.getElementById("cards-container");
 const creatCardHtmlFormation = (formation) => {
     return `
         <div
-            class=" bg-white  rounded-2xl p-6 flex flex-col justify-between w-80 hover:shadow-2xl transition-shadow duration-300">
+            class=" bg-white  rounded-2xl p-4 flex flex-col justify-between w-70 hover:shadow-2xl transition-shadow duration-300 box-content">
             <div>
                 <h3 class="text-2xl font-bold  text-[#1C1D7F] mb-4">${formation.theme}</h3>
             </div>

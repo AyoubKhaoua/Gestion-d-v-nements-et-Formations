@@ -1,4 +1,8 @@
 {
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.16",
+    "tailwindcss": "^4.1.16"
+  },
   "name": "gestion-d-v-nements-et-formations",
   "version": "1.0.0",
   "description": "",
