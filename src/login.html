@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div
+        class="container h-[100vh] bg-gradient-to-t from-blue-100 to-blue-300 to-90% flex flex-col justify-around items-center ">
+        <div class="w-5/6 flex flex-col justify-center items-center  p-5 gap-4">
+            <div class="flex flex-col justify-around  items-center ">
+                <img class="w-30 h-30 rounded-full"
+                    src="image/e-learning-platforms-hands-of-robot-hold-e-learning-management-system-tools-digital-education.webp"
+                    alt="">
+                <h2 class="font-medium text-3xl">
+                    Welcome back
+                </h2>
+                <p class="text-gray-400">
+                    sign in your account to continue
+                </p>
+            </div> 
+            <div class="flex flex-col gap-5">
+                <form action="" class="flex flex-col gap-2 w-full">
+
+                    <label for="">Email address</label>
+                    <div class="relative flex items-center w-full">
+                        
+                        <i class="fa-solid fa-envelope absolute ml-3 text-gray-400"></i>
+                       <input class="border border-gray-400 py-2 rounded-xl bg-white w-full pl-10" type="email" name="" id="email" placeholder="Enter your email"> 
+                    </div>
+                    
+                    <label for="">Password</label>
+                    <div class="relative flex items-center w-full">
+                        <i class="fa-solid fa-lock absolute ml-3 text-gray-400"></i>
+                       <input class="password border border-gray-400 py-2 rounded-xl bg-white w-full pl-10" type="password" name="" id="password" placeholder="Entre your password"> 
+                      <button class="eye absolute right-3 "><i class="fa-solid fa-eye text-gray-400"></i></button> 
+                    </div>
+                    
+                    <div class="flex justify-between">
+                        <div><input type="checkbox" name="" id="">
+                            <label for="">Remember me</label>
+                        </div>
+                        <a href="" class="text-blue-500">Porgot password?</a>
+
+                    </div>
+
+                    <button type="submit" class="border border-gray-400 py-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white">login</button>
+                </form>
+                <div class="text-center">
+                    
+                    <p class="">or continue with</p>
+                </div>
+                <div class="flex justify-between gap-1">
+                    <a href="" class="border border-gray-400 px-9 py-2 rounded-xl flex gap-2 items-center bg-white"> <i class="fa-brands fa-google"></i>Google</a>
+                    <a href="" class="border border-gray-400 px-9 py-2 rounded-xl flex gap-2 items-center bg-white"> <i class="fa-brands fa-apple"></i>Apple</a>
+                </div>
+                <div class="">
+                    <p>Don't hava an account? <a href="" class="text-blue-500">sign up for free</a></p>
+                    
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const eye = document.querySelector('.eye');
+        const password = document.querySelector('.password');
+        
+        eye.addEventListener('click',()=>{
+            if(password.type === 'password'){
+              password.type = "text";
+              
+              eye.innerHTML = '<i class="fa-solid fa-eye-slash text-gray-400"></i>'  
+            }else{
+                password.type = 'password';
+                eye.innerHTML = '<i class="fa-solid fa-eye text-gray-400"></i>';
+            }
+             
+        })
+    </script>
+</body>
+
+</html>
