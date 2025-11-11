@@ -25,12 +25,22 @@
                 </p>
             </div> 
             <div class="flex flex-col gap-5">
-                <form action="" class="flex flex-col gap-2">
+                <form action="" class="flex flex-col gap-2 w-full">
 
                     <label for="">Email address</label>
-                    <input class="border border-gray-400 py-2 rounded-xl bg-white" type="email" name="" id="">
+                    <div class="relative flex items-center w-full">
+                        
+                        <i class="fa-solid fa-envelope absolute ml-3 text-gray-400"></i>
+                       <input class="border border-gray-400 py-2 rounded-xl bg-white w-full pl-10" type="email" name="" id="email" placeholder="Enter your email"> 
+                    </div>
+                    
                     <label for="">Password</label>
-                    <input class="border border-gray-400 py-2 rounded-xl bg-white"  type="password" name="" id="">
+                    <div class="relative flex items-center w-full">
+                        <i class="fa-solid fa-lock absolute ml-3 text-gray-400"></i>
+                       <input class="password border border-gray-400 py-2 rounded-xl bg-white w-full pl-10" type="password" name="" id="password" placeholder="Entre your password"> 
+                      <button class="eye absolute right-3 "><i class="fa-solid fa-eye text-gray-400"></i></button> 
+                    </div>
+                    
                     <div class="flex justify-between">
                         <div><input type="checkbox" name="" id="">
                             <label for="">Remember me</label>
@@ -60,6 +70,22 @@
         </div>
 
     </div>
+    <script>
+        const eye = document.querySelector('.eye');
+        const password = document.querySelector('.password');
+        
+        eye.addEventListener('click',()=>{
+            if(password.type === 'password'){
+              password.type = "text";
+              
+              eye.innerHTML = '<i class="fa-solid fa-eye-slash text-gray-400"></i>'  
+            }else{
+                password.type = 'password';
+                eye.innerHTML = '<i class="fa-solid fa-eye text-gray-400"></i>';
+            }
+             
+        })
+    </script>
 </body>
 
 </html>
