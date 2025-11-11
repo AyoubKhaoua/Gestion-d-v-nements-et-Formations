@@ -1,364 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-    <link href="./output.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link href="./output.css" rel="stylesheet" />
     <script defer src="formation.js"></script>
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <header class="flex justify-between items-center py-1.5 px-10 font-medium max-[600px]:px-3 ">
-        <h2><samp class="text-blue-500 uppercase">new</samp>project</h2>
-        <nav class="flex gap-3 max-[600px]:hidden ">
-            <a href="" class="hover:text-blue-600 transition-all duration-600">Acceuil</a>
-            <a href="" class="hover:text-blue-600 transition-all duration-600">Formation</a>
-            <a href="" class="hover:text-blue-600 transition-all duration-600">Evenement</a>
-            <a href="" class="hover:text-blue-600 transition-all duration-600">Mini jeux</a>
-        </nav>
-        <div class="btn-login max-[600px]:hidden">
-            <a href="login.html"
-                class="text-blue-600 border border-blue-600 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700">log
-                in</a>
-            <a
-                class="bg-blue-400 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700">sing
-                up</a>
-        </div>
-        
-        <div class="version-mobile hidden  flex-col  gap-3">
-           
-            <a href="" class="hover:text-blue-600 transition-all duration-600">Acceuil</a>
-            <a href="" class="hover:text-blue-600 transition-all duration-600">Formation</a>
-            <a href="" class="hover:text-blue-600 transition-all duration-600">Evenement</a>
-            <a href="" class="hover:text-blue-600 transition-all duration-600">Mini jeux</a>
-            <button
-                class="text-blue-600 border border-blue-600 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700">log
-                in</button>
-            <button
-                class="bg-blue-400 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700">sing
-                up</button>
-        
-        
-        </div>
-        <div class="icon hidden max-[600px]:block">
-           <i class="fa-solid fa-bars text-3xl"></i>
-        </div>
-        <script>
-            const navbar = document.querySelector('nav');
-            const buttons = document.querySelector('.btn-login');
-            const icon = document.querySelector('.icon');
-            const versionMobile = document.querySelector('.version-mobile');
-           
-            icon.addEventListener('click',()=>{
-              const isActive = versionMobile.classList.toggle('hidden');
-              if(isActive){
-                icon.innerHTML = '<i class="fa-solid fa-bars text-3xl"></i>';
-              }else{
-                icon.innerHTML = '<i class="fa-solid fa-x text-3xl"></i>';
-                
-              }
-            
+  <body>
+    <header
+      class="flex justify-between items-center py-1.5 px-10 font-medium max-[600px]:px-3"
+    >
+      <h2><samp class="text-blue-500 uppercase">new</samp>project</h2>
+      <nav class="flex gap-3 max-[600px]:hidden">
+        <a
+          href="index.html"
+          class="hover:text-blue-600 transition-all duration-600"
+          >Acceuil</a
+        >
+        <a
+          href="formation.html"
+          class="hover:text-blue-600 transition-all duration-600"
+          >Formation</a
+        >
+        <a
+          href="evenments.html"
+          class="hover:text-blue-600 transition-all duration-600"
+          >Evenement</a
+        >
+        <a href="" class="hover:text-blue-600 transition-all duration-600"
+          >Mini jeux</a
+        >
+      </nav>
+      <div class="btn-login max-[600px]:hidden">
+        <a
+          href="login.html"
+          class="text-blue-600 border border-blue-600 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700"
+          >log in</a
+        >
+        <a
+          class="bg-blue-400 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700"
+          >sing up</a
+        >
+      </div>
 
-            })
-        </script>
+      <div class="version-mobile hidden flex-col gap-3">
+        <a href="" class="hover:text-blue-600 transition-all duration-600"
+          >Acceuil</a
+        >
+        <a href="" class="hover:text-blue-600 transition-all duration-600"
+          >Formation</a
+        >
+        <a href="" class="hover:text-blue-600 transition-all duration-600"
+          >Evenement</a
+        >
+        <a href="" class="hover:text-blue-600 transition-all duration-600"
+          >Mini jeux</a
+        >
+        <button
+          class="text-blue-600 border border-blue-600 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700"
+        >
+          log in
+        </button>
+        <button
+          class="bg-blue-400 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700"
+        >
+          sing up
+        </button>
+      </div>
+      <div class="icon hidden max-[600px]:block">
+        <i class="fa-solid fa-bars text-3xl"></i>
+      </div>
+      <script>
+        const navbar = document.querySelector("nav");
+        const buttons = document.querySelector(".btn-login");
+        const icon = document.querySelector(".icon");
+        const versionMobile = document.querySelector(".version-mobile");
+
+        icon.addEventListener("click", () => {
+          const isActive = versionMobile.classList.toggle("hidden");
+          if (isActive) {
+            icon.innerHTML = '<i class="fa-solid fa-bars text-3xl"></i>';
+          } else {
+            icon.innerHTML = '<i class="fa-solid fa-x text-3xl"></i>';
+          }
+        });
+      </script>
     </header>
     <main>
-        <section class="h-[80vh] bg-[#f5f5ff] w-full flex  py-1.5 px-10 gap-3 max-[600px]:flex-col max-[600px]:h-auto max-[600px]:px-3 max-[600px]:pt-6">
-            <div class="flex flex-col gap-6 my-auto  w-full">
-                <h1 class="text-5xl font-bold"><span
-                        class="bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-purple-500">Master New
-                        Skills</span><br> at Your Own
-                    Pace</h1>
-                <p class="text-gray-400 text-xl">Join over 50,000 students learning from world-class instructors.<br>
-                    Get personalized tutoring, interactive courses, and achieve your goals faster.</p>
-                <div class="flex gap-3">
-                    <p><i class="fa-solid fa-check-double text-[#1C1D7F]"></i>1-on-1 Tutoring</p>
-                    <p><i class="fa-solid fa-check-double text-[#1C1D7F]"></i>Flexible Scheduling</p>
-                    <p><i class="fa-solid fa-check-double text-[#1C1D7F]"></i>Expert Instructors</p>
-                </div>
-                <div class="flex gap-6 max-[600px]:gap-1">
-                    <button
-                        class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md text-amber-50 hover:bg-[#140BFF] 0 transition-all duration-700">Start
-                        Learn</button>
-                    <button
-                        class="px-6 py-2 bg-transparent text-blue-600 border border-blue-600 rounded-md hover:bg-[#140BFF] hover:text-amber-50 transition-all duration-700">View
-                        All Formation</button>
-                </div>
-                <div class="flex justify-between w-2/3 max-[600px]:w-full">
-                    <div class="">
-                        <p class="text-blue-600 text-[1.5rem] font-medium text-center">50K+</p>
-                        <p class="text-gray-500 text-[0.7rem]">Happy Students</p>
-                    </div>
-                    <div class="">
-                        <p class="text-blue-600 text-[1.5rem] font-medium text-center">1000+</p>
-                        <p class="text-gray-500 text-[0.7rem]">Expert Tutors</p>
-                    </div>
-                    <div class="">
-                        <p class="text-blue-600 text-[1.5rem] font-medium text-center">98%</p>
-                        <p class="text-gray-500 text-[0.7rem]">Success Rate</p>
-                    </div>
-                </div>
-
+      <section
+        class="h-[80vh] bg-[#f5f5ff] w-full flex py-1.5 px-10 gap-3 max-[600px]:flex-col max-[600px]:h-auto max-[600px]:px-3 max-[600px]:pt-6"
+      >
+        <div class="flex flex-col gap-6 my-auto w-full">
+          <h1 class="text-5xl font-bold">
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500"
+              >Master New Skills</span
+            ><br />
+            at Your Own Pace
+          </h1>
+          <p class="text-gray-400 text-xl">
+            Join over 50,000 students learning from world-class instructors.<br />
+            Get personalized tutoring, interactive courses, and achieve your
+            goals faster.
+          </p>
+          <div class="flex gap-3">
+            <p>
+              <i class="fa-solid fa-check-double text-[#1C1D7F]"></i>1-on-1
+              Tutoring
+            </p>
+            <p>
+              <i class="fa-solid fa-check-double text-[#1C1D7F]"></i>Flexible
+              Scheduling
+            </p>
+            <p>
+              <i class="fa-solid fa-check-double text-[#1C1D7F]"></i>Expert
+              Instructors
+            </p>
+          </div>
+          <div class="flex gap-6 max-[600px]:gap-1">
+            <button
+              class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md text-amber-50 hover:bg-[#140BFF] 0 transition-all duration-700"
+            >
+              Start Learn
+            </button>
+            <button
+              class="px-6 py-2 bg-transparent text-blue-600 border border-blue-600 rounded-md hover:bg-[#140BFF] hover:text-amber-50 transition-all duration-700"
+            >
+              View All Formation
+            </button>
+          </div>
+          <div class="flex justify-between w-2/3 max-[600px]:w-full">
+            <div class="">
+              <p class="text-blue-600 text-[1.5rem] font-medium text-center">
+                50K+
+              </p>
+              <p class="text-gray-500 text-[0.7rem]">Happy Students</p>
             </div>
-            <div class="container m-auto w-full h-[60vh] p-2 bg-blue-100 rounded-lg relative">
-                <img class="w-full h-full rounded-lg " src="image/phoenix-esport-team-logo-with-purple-neon.jpg" alt="">
-                <div class="absolute top-0 left-0 z-10 bg-blue-100 rounded-md p-2">
-                    <p class="text-black text-[0.7rem]">95% Improvement</p>
-                    <p class="text-gray-500 text-[0.5rem]  ">Average Grade Boos</p>
-                </div>
-                <div class="absolute bottom-0 right-0 z-10 bg-blue-100 rounded-md px-3 py-2">
-                    <p class="text-black text-[0.7rem]">24/7 Support</p>
-                    <p class="text-gray-500 text-[0.5rem]">Always Available</p>
-                </div>
+            <div class="">
+              <p class="text-blue-600 text-[1.5rem] font-medium text-center">
+                1000+
+              </p>
+              <p class="text-gray-500 text-[0.7rem]">Expert Tutors</p>
             </div>
-        </section>
-        <section class="flex flex-col gap-6 my-16 w-full">
-            <h1 class="text-center text-gray-500">Trusted by students from top universities</h1>
-            <div class="flex justify-center gap-10 font-medium text-gray-400 w-full max-[600px]:gap-3">
-                <p>Harvard</p>
-                <p>MIT</p>
-                <p>Stanford</p>
-                <p>Oxford</p>
-                <p>Cambridge</p>
-                <p>Yale</p>
+            <div class="">
+              <p class="text-blue-600 text-[1.5rem] font-medium text-center">
+                98%
+              </p>
+              <p class="text-gray-500 text-[0.7rem]">Success Rate</p>
             </div>
-        </section>
-        <section class="bg-[#f5f5ff] w-full py-1.5 px-10 max-[600px]:px-3 max-[600px]:mx-auto">
-            <div class="container flex flex-col gap-5 my-16">
-                <h1
-                    class="text-center text-3xl font-bold bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-purple-500">
-                    Popular Courses</h1>
-                <p class="text-center text-xl text-gray-500">Discover our most popular courses taught by expert
-                    instructors. Get personalized <br> tutoring and achieve your academic goals.</p>
-                <div id="cards-container" class="grid md:grid-cols-3 sm:grid-cols-2 gap-6 border-blue-800 py-10 max-[600px]:mx-auto">
-                </div>
-                <button
-                    class="px-6 py-2 bg-transparent border text-blue-600 border-blue-600 rounded-md hover:bg-[#140BFF] hover:text-amber-50 transition-all duration-700 w-[40vh] mx-auto">View
-                    All Formation</button>
+          </div>
+        </div>
+        <div
+          class="container m-auto w-full h-[60vh] p-2 bg-blue-100 rounded-lg relative"
+        >
+          <img
+            class="w-full h-full rounded-lg"
+            src="image/phoenix-esport-team-logo-with-purple-neon.jpg"
+            alt=""
+          />
+          <div class="absolute top-0 left-0 z-10 bg-blue-100 rounded-md p-2">
+            <p class="text-black text-[0.7rem]">95% Improvement</p>
+            <p class="text-gray-500 text-[0.5rem]">Average Grade Boos</p>
+          </div>
+          <div
+            class="absolute bottom-0 right-0 z-10 bg-blue-100 rounded-md px-3 py-2"
+          >
+            <p class="text-black text-[0.7rem]">24/7 Support</p>
+            <p class="text-gray-500 text-[0.5rem]">Always Available</p>
+          </div>
+        </div>
+      </section>
+      <section class="flex flex-col gap-6 my-16 w-full">
+        <h1 class="text-center text-gray-500">
+          Trusted by students from top universities
+        </h1>
+        <div
+          class="flex justify-center gap-10 font-medium text-gray-400 w-full max-[600px]:gap-3"
+        >
+          <p>Harvard</p>
+          <p>MIT</p>
+          <p>Stanford</p>
+          <p>Oxford</p>
+          <p>Cambridge</p>
+          <p>Yale</p>
+        </div>
+      </section>
+      <section
+        class="bg-[#f5f5ff] w-full py-1.5 px-10 max-[600px]:px-3 max-[600px]:mx-auto"
+      >
+        <div class="container flex flex-col gap-5 my-16">
+          <h1
+            class="text-center text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500"
+          >
+            Popular Courses
+          </h1>
+          <p class="text-center text-xl text-gray-500">
+            Discover our most popular courses taught by expert instructors. Get
+            personalized <br />
+            tutoring and achieve your academic goals.
+          </p>
+          <div
+            id="cards-container"
+            class="grid md:grid-cols-3 sm:grid-cols-2 gap-6 border-blue-800 py-10 max-[600px]:mx-auto"
+          ></div>
+          <button
+            class="px-6 py-2 bg-transparent border text-blue-600 border-blue-600 rounded-md hover:bg-[#140BFF] hover:text-amber-50 transition-all duration-700 w-[40vh] mx-auto"
+          >
+            View All Formation
+          </button>
+        </div>
+      </section>
+      <section class="w-full py-1.5 px-10 max-[600px]:px-3">
+        <div class="container flex flex-col gap-5 my-16 items-center">
+          <h1
+            class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500"
+          >
+            What Our Students Say
+          </h1>
+          <p class="text-center text-xl text-gray-500">
+            Join thousands of successful students who have transformed their
+            academic <br />
+            journey with our personalized tutoring and expert instruction.
+          </p>
+          <div
+            class="flex justify-between w-5/6 max-[600px]:w-full max-[600px]:grid max-[600px]:grid-cols-2 max-[600px]:grid-rows-2 max-[600px]:text-center max-[600px]:gap-3"
+          >
+            <div class="">
+              <p
+                class="text-[1.5rem] font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500"
+              >
+                98%
+              </p>
+              <p class="text-gray-500 text-[1rem]">Student Satisfaction</p>
             </div>
-
-        </section>
-        <section class="w-full py-1.5 px-10 max-[600px]:px-3">
-            <div class="container flex flex-col gap-5 my-16 items-center">
-                <h1
-                    class="text-3xl font-bold bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-purple-500">
-                    What Our Students Say</h1>
-                <p class="text-center text-xl text-gray-500">Join thousands of successful students who have transformed
-                    their academic <br> journey with our personalized tutoring and expert instruction.</p>
-                <div class="flex justify-between w-5/6 max-[600px]:w-full max-[600px]:grid max-[600px]:grid-cols-2 max-[600px]:grid-rows-2 max-[600px]:text-center max-[600px]:gap-3">
-                    <div class="">
-                        <p
-                            class=" text-[1.5rem] font-bold text-center bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-purple-500">
-                            98%</p>
-                        <p class="text-gray-500 text-[1rem]">Student Satisfaction</p>
-                    </div>
-                    <div class="">
-                        <p
-                            class="text-[1.5rem] font-bold text-center bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-purple-800">
-                            95%</p>
-                        <p class="text-gray-500 text-[1rem]">Grade Improvement</p>
-                    </div>
-                    <div class="">
-                        <p
-                            class=" text-[1.5rem] font-bold text-center bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-green-500">
-                            24/7</p>
-                        <p class="text-gray-500 text-[1rem]">Support Available</p>
-                    </div>
-                    <div class="">
-                        <p
-                            class=" text-[1.5rem] font-bold text-center bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-red-500">
-                            50K+</p>
-                        <p class="text-gray-500 text-[1rem]">Success Stories</p>
-                    </div>
-                </div>
-                <div class="flex justify-between gap-2 max-[600px]:flex-col">
-                    <div class="flex flex-col gap-3 drop-shadow-blue-950 shadow-md rounded-2xl p-5 ">
-                        <div class="flex justify-between">
-                            <div>
-                                <i class="fa-solid fa-star text-amber-300"></i>
-                                <i class="fa-solid fa-star text-amber-300"></i>
-                                <i class="fa-solid fa-star text-amber-300"></i>
-                                <i class="fa-solid fa-star text-amber-300"></i>
-                                <i class="fa-solid fa-star text-amber-300"></i>
-                            </div>
-                            <i
-                                class="fa-solid fa-quote-right bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-red-500"></i>
-                        </div>
-                        <p class="text-gray-400">
-                            "Amazing physics tutoring! The interactive experiments and clear explanations helped me
-                            grasp complex concepts. Now I'm confident in my engineering studies."
-                        </p>
-                        <div class="flex items-center gap-2">
-                            <div
-                                class="bg-gradient-to-r from-blue-600 to-red-500 w-10 h-10  rounded-full flex justify-center items-center">
-                                <p class="text-amber-50">MG</p>
-                            </div>
-
-                            <div>
-                                <h1>Maria Garcia</h1>
-                                <p>College Freshman
-                                    Stanford University</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex flex-col gap-3 drop-shadow-blue-950 shadow-md rounded-2xl p-5">
-                            <div class="flex justify-between">
-                                <div>
-                                    <i class="fa-solid fa-star text-amber-300"></i>
-                                    <i class="fa-solid fa-star text-amber-300"></i>
-                                    <i class="fa-solid fa-star text-amber-300"></i>
-                                    <i class="fa-solid fa-star text-amber-300"></i>
-                                    <i class="fa-solid fa-star text-amber-300"></i>
-                                </div>
-                                <i
-                                    class="fa-solid fa-quote-right bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-red-500"></i>
-                            </div>
-                            <p class="text-gray-400">
-                                "Amazing physics tutoring! The interactive experiments and clear explanations helped me
-                                grasp complex concepts. Now I'm confident in my engineering studies."
-                            </p>
-                            <div class="flex items-center gap-2">
-                                <div
-                                    class="bg-gradient-to-r from-blue-600 to-red-300 w-10 h-10  rounded-full flex justify-center items-center">
-                                    <p class="text-amber-50">MG</p>
-                                </div>
-
-                                <div>
-                                    <h1>Maria Garcia</h1>
-                                    <p>College Freshman
-                                        Stanford University</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex flex-col gap-3 rounded-2xl p-5 drop-shadow-blue-950 shadow-md">
-                            <div class="flex justify-between">
-                                <div>
-                                    <i class="fa-solid fa-star text-amber-300"></i>
-                                    <i class="fa-solid fa-star text-amber-300"></i>
-                                    <i class="fa-solid fa-star text-amber-300"></i>
-                                    <i class="fa-solid fa-star text-amber-300"></i>
-                                    <i class="fa-solid fa-star text-amber-300"></i>
-                                </div>
-                                <i
-                                    class="fa-solid fa-quote-right bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-red-500"></i>
-                            </div>
-                            <p class="text-gray-400">
-                                "Amazing physics tutoring! The interactive experiments and clear explanations helped me
-                                grasp complex concepts. Now I'm confident in my engineering studies."
-                            </p>
-                            <div class="flex items-center gap-2">
-                                <div
-                                    class="bg-gradient-to-r from-blue-600 to-green-500 w-10 h-10  rounded-full flex justify-center items-center">
-                                    <p class="text-amber-50">MG</p>
-                                </div>
-
-                                <div>
-                                    <h1>Maria Garcia</h1>
-                                    <p>College Freshman
-                                        Stanford University</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-3 items-center my-4 bg-[#f5f5ff] w-full rounded-2xl py-5 max-[600px]:text-center">
-                    <h1 class="text-2xl font-bold text-black">Ready to Join Them?</h1>
-                    <p class="text-gray-400">Start your success story today with personalized tutoring from expert
-                        instructors.</p>
-                    <div class="flex gap-1">
-                        <button
-                            class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md text-amber-50 hover:bg-[#140BFF] 0 transition-all duration-700">Start
-                            Learn</button>
-                        <button
-                            class="px-6 py-2 bg-transparent text-blue-600 border border-blue-600 rounded-md hover:bg-[#140BFF] hover:text-amber-50 transition-all duration-700">View
-                            All Formation</button>
-                    </div>
-                </div>
+            <div class="">
+              <p
+                class="text-[1.5rem] font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-800"
+              >
+                95%
+              </p>
+              <p class="text-gray-500 text-[1rem]">Grade Improvement</p>
             </div>
-        </section>
-        <section class="bg-[#f5f5ff] w-full py-1.5 px-10 max-[600px]:px-3">
-            <div class="container flex flex-col gap-3 mx-auto items-center w-4/6  my-16 max-[600px]:w-full">
-                <h1 class="text-black font-medium text-2xl">Frequently Asked Questions</h1>
-                <div class="grid grid-cols-2 grid-rows-2 gap-5 max-[600px]:grid-rows-4 max-[600px]:grid-cols-1 ">
-                    <div class="flex flex-col gap-1 bg-white p-3 rounded-xl drop-shadow-blue-950 shadow-md">
-                        <h3
-                            class="bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-purple-500 font-medium">
-                            How do I enroll in a course?</h3>
-                        <p class="text-gray-400">Simply create an account, browse our course catalog, and click 'Enroll'
-                            on any course that
-                            interests you.</p>
-                    </div>
-                    <div class="flex flex-col gap-1 bg-white p-3 rounded-xl drop-shadow-blue-950 shadow-md">
-                        <h3
-                            class="bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-purple-500 font-medium">
-                            Are certificates recognized?</h3>
-                        <p class="text-gray-400">Absolutely! All our courses are self-paced, so you can learn whenever
-                            it's convenient for
-                            you.</p>
-                    </div>
-                    <div class="flex flex-col gap-1 bg-white p-3 rounded-xl drop-shadow-blue-950 shadow-md">
-                        <h3
-                            class="bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-purple-500 font-medium">
-                            Can I learn at my own pace?</h3>
-                        <p class="text-gray-400">Yes! Our certificates are recognized by industry partners and can be
-                            verified online.</p>
-                    </div>
-                    <div class="flex flex-col gap-1 bg-white p-3 rounded-xl drop-shadow-blue-950 shadow-md">
-                        <h3
-                            class="bg-clip-text  text-transparent bg-gradient-to-r from-blue-600 to-purple-500 font-medium">
-                            Is there student support available?</h3>
-                        <p class="text-gray-400">Yes, we offer 24/7 student support through chat, email, and phone for
-                            all enrolled students.
-                        </p>
-                    </div>
-                </div>
+            <div class="">
+              <p
+                class="text-[1.5rem] font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-500"
+              >
+                24/7
+              </p>
+              <p class="text-gray-500 text-[1rem]">Support Available</p>
             </div>
+            <div class="">
+              <p
+                class="text-[1.5rem] font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500"
+              >
+                50K+
+              </p>
+              <p class="text-gray-500 text-[1rem]">Success Stories</p>
+            </div>
+          </div>
+          <div class="flex justify-between gap-2 max-[600px]:flex-col">
+            <div
+              class="flex flex-col gap-3 drop-shadow-blue-950 shadow-md rounded-2xl p-5"
+            >
+              <div class="flex justify-between">
+                <div>
+                  <i class="fa-solid fa-star text-amber-300"></i>
+                  <i class="fa-solid fa-star text-amber-300"></i>
+                  <i class="fa-solid fa-star text-amber-300"></i>
+                  <i class="fa-solid fa-star text-amber-300"></i>
+                  <i class="fa-solid fa-star text-amber-300"></i>
+                </div>
+                <i
+                  class="fa-solid fa-quote-right bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500"
+                ></i>
+              </div>
+              <p class="text-gray-400">
+                "Amazing physics tutoring! The interactive experiments and clear
+                explanations helped me grasp complex concepts. Now I'm confident
+                in my engineering studies."
+              </p>
+              <div class="flex items-center gap-2">
+                <div
+                  class="bg-gradient-to-r from-blue-600 to-red-500 w-10 h-10 rounded-full flex justify-center items-center"
+                >
+                  <p class="text-amber-50">MG</p>
+                </div>
 
-        </section>
-
-    </main>
-    <footer class="bg-[#0f172b] w-full py-1.5 px-10 text-white">
-        <div class="container mt-16">
-            <div class="flex  justify-between border-b border-b-blue-950 pb-10 max-[600px]:flex-col">
-                <div class="flex flex-col gap-2 ">
-                    <h2><samp class="text-blue-500 uppercase">new</samp>project</h2>
-                    <p class="text-gray-400">Empowering learners worldwide with accessible ,<br> high-quality education.  Join our community and<br>
-                        unlock your potential.</p>
-                    <div>
-                        <!-- icons -->
-                    </div>
+                <div>
+                  <h1>Maria Garcia</h1>
+                  <p>College Freshman Stanford University</p>
                 </div>
-                <div class="flex flex-col gap-2 ">
-                    <h2>Quick Links</h2>
-                    <div class="flex flex-col gap-2 text-gray-400" >
-                        <a href="">Home</a><a href="">Courses</a><a href="">Instructors</a><a href="">Contact</a>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-2 ">
-                    <h2>Categories</h2>
-                    <div class="flex flex-col gap-2 text-gray-400">
-                        <a href="">Web Development</a><a href="">Data Science</a><a href="">Digital Marketing</a><a href="">Graphic Design</a>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-2 ">
-                    <h2>Support</h2>
-                    <div class="flex flex-col gap-2 text-gray-400">
-                        <a href="">Help Center</a><a href="">Student Support</a><a href="">Privacy Policy</a><a href="">Terms of Service</a>
-                    </div>
-                </div>
+              </div>
             </div>
             <div>
-                <p class="text-center my-2">© 2025 NEWprojet. All rights reserved.</p>
+              <div
+                class="flex flex-col gap-3 drop-shadow-blue-950 shadow-md rounded-2xl p-5"
+              >
+                <div class="flex justify-between">
+                  <div>
+                    <i class="fa-solid fa-star text-amber-300"></i>
+                    <i class="fa-solid fa-star text-amber-300"></i>
+                    <i class="fa-solid fa-star text-amber-300"></i>
+                    <i class="fa-solid fa-star text-amber-300"></i>
+                    <i class="fa-solid fa-star text-amber-300"></i>
+                  </div>
+                  <i
+                    class="fa-solid fa-quote-right bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500"
+                  ></i>
+                </div>
+                <p class="text-gray-400">
+                  "Amazing physics tutoring! The interactive experiments and
+                  clear explanations helped me grasp complex concepts. Now I'm
+                  confident in my engineering studies."
+                </p>
+                <div class="flex items-center gap-2">
+                  <div
+                    class="bg-gradient-to-r from-blue-600 to-red-300 w-10 h-10 rounded-full flex justify-center items-center"
+                  >
+                    <p class="text-amber-50">MG</p>
+                  </div>
+
+                  <div>
+                    <h1>Maria Garcia</h1>
+                    <p>College Freshman Stanford University</p>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div>
+              <div
+                class="flex flex-col gap-3 rounded-2xl p-5 drop-shadow-blue-950 shadow-md"
+              >
+                <div class="flex justify-between">
+                  <div>
+                    <i class="fa-solid fa-star text-amber-300"></i>
+                    <i class="fa-solid fa-star text-amber-300"></i>
+                    <i class="fa-solid fa-star text-amber-300"></i>
+                    <i class="fa-solid fa-star text-amber-300"></i>
+                    <i class="fa-solid fa-star text-amber-300"></i>
+                  </div>
+                  <i
+                    class="fa-solid fa-quote-right bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-red-500"
+                  ></i>
+                </div>
+                <p class="text-gray-400">
+                  "Amazing physics tutoring! The interactive experiments and
+                  clear explanations helped me grasp complex concepts. Now I'm
+                  confident in my engineering studies."
+                </p>
+                <div class="flex items-center gap-2">
+                  <div
+                    class="bg-gradient-to-r from-blue-600 to-green-500 w-10 h-10 rounded-full flex justify-center items-center"
+                  >
+                    <p class="text-amber-50">MG</p>
+                  </div>
 
+                  <div>
+                    <h1>Maria Garcia</h1>
+                    <p>College Freshman Stanford University</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col gap-3 items-center my-4 bg-[#f5f5ff] w-full rounded-2xl py-5 max-[600px]:text-center"
+          >
+            <h1 class="text-2xl font-bold text-black">Ready to Join Them?</h1>
+            <p class="text-gray-400">
+              Start your success story today with personalized tutoring from
+              expert instructors.
+            </p>
+            <div class="flex gap-1">
+              <button
+                class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md text-amber-50 hover:bg-[#140BFF] 0 transition-all duration-700"
+              >
+                Start Learn
+              </button>
+              <button
+                class="px-6 py-2 bg-transparent text-blue-600 border border-blue-600 rounded-md hover:bg-[#140BFF] hover:text-amber-50 transition-all duration-700"
+              >
+                View All Formation
+              </button>
+            </div>
+          </div>
         </div>
+      </section>
+      <section class="bg-[#f5f5ff] w-full py-1.5 px-10 max-[600px]:px-3">
+        <div
+          class="container flex flex-col gap-3 mx-auto items-center w-4/6 my-16 max-[600px]:w-full"
+        >
+          <h1 class="text-black font-medium text-2xl">
+            Frequently Asked Questions
+          </h1>
+          <div
+            class="grid grid-cols-2 grid-rows-2 gap-5 max-[600px]:grid-rows-4 max-[600px]:grid-cols-1"
+          >
+            <div
+              class="flex flex-col gap-1 bg-white p-3 rounded-xl drop-shadow-blue-950 shadow-md"
+            >
+              <h3
+                class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500 font-medium"
+              >
+                How do I enroll in a course?
+              </h3>
+              <p class="text-gray-400">
+                Simply create an account, browse our course catalog, and click
+                'Enroll' on any course that interests you.
+              </p>
+            </div>
+            <div
+              class="flex flex-col gap-1 bg-white p-3 rounded-xl drop-shadow-blue-950 shadow-md"
+            >
+              <h3
+                class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500 font-medium"
+              >
+                Are certificates recognized?
+              </h3>
+              <p class="text-gray-400">
+                Absolutely! All our courses are self-paced, so you can learn
+                whenever it's convenient for you.
+              </p>
+            </div>
+            <div
+              class="flex flex-col gap-1 bg-white p-3 rounded-xl drop-shadow-blue-950 shadow-md"
+            >
+              <h3
+                class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500 font-medium"
+              >
+                Can I learn at my own pace?
+              </h3>
+              <p class="text-gray-400">
+                Yes! Our certificates are recognized by industry partners and
+                can be verified online.
+              </p>
+            </div>
+            <div
+              class="flex flex-col gap-1 bg-white p-3 rounded-xl drop-shadow-blue-950 shadow-md"
+            >
+              <h3
+                class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500 font-medium"
+              >
+                Is there student support available?
+              </h3>
+              <p class="text-gray-400">
+                Yes, we offer 24/7 student support through chat, email, and
+                phone for all enrolled students.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-[#0f172b] w-full py-1.5 px-10 text-white">
+      <div class="container mt-16">
+        <div
+          class="flex justify-between border-b border-b-blue-950 pb-10 max-[600px]:flex-col"
+        >
+          <div class="flex flex-col gap-2">
+            <h2><samp class="text-blue-500 uppercase">new</samp>project</h2>
+            <p class="text-gray-400">
+              Empowering learners worldwide with accessible ,<br />
+              high-quality education. Join our community and<br />
+              unlock your potential.
+            </p>
+            <div>
+              <!-- icons -->
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h2>Quick Links</h2>
+            <div class="flex flex-col gap-2 text-gray-400">
+              <a href="">Home</a><a href="">Courses</a><a href="">Instructors</a
+              ><a href="">Contact</a>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h2>Categories</h2>
+            <div class="flex flex-col gap-2 text-gray-400">
+              <a href="">Web Development</a><a href="">Data Science</a
+              ><a href="">Digital Marketing</a><a href="">Graphic Design</a>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h2>Support</h2>
+            <div class="flex flex-col gap-2 text-gray-400">
+              <a href="">Help Center</a><a href="">Student Support</a
+              ><a href="">Privacy Policy</a><a href="">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="text-center my-2">© 2025 NEWprojet. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>
