@@ -42,3 +42,34 @@
     padding-right: 20px;
 
 }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: 'Oxygen', sans-serif;
+  
+  
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  padding: 10px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #4DC2C3; /* highlight color */
+  box-shadow: 0 0 4px rgba(77, 194, 195, 0.5);
+}
