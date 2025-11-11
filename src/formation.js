@@ -1,4 +1,54 @@
-const cardsContainer=document.getElementById("cards-container");
+// nav bar 
+const navbar = document.querySelector('nav');
+const buttons = document.querySelector('.btn-login');
+const icon = document.querySelector('.icon');
+const versionMobile = document.querySelector('.version-mobile');
+
+icon.addEventListener('click', () => {
+    const isActive = versionMobile.classList.toggle('hidden');
+    if (isActive) {
+        icon.innerHTML = '<i class="fa-solid fa-bars text-3xl"></i>';
+    } else {
+        icon.innerHTML = '<i class="fa-solid fa-x text-3xl"></i>';
+
+    }
+})
+
+let formationsList=[];
+
+const cardsContainer = document.getElementById("cards-container");
+const modal_continaire = document.getElementById('modal_continaire');
+
+const renderFormations=()=>{
+    cardsContainer.innerHTML = formationsList.map((f, index) => creatCardHtmlFormation(f, index)).join("")
+
+     const btns = document.querySelectorAll('.inscrire-btn');
+        btns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                modal_continaire.classList.add('afficheFormulaire');
+                modal_continaire.setAttribute('data-formation-id', btn.dataset.formationId)
+        });
+    });
+}
+const saveFormationsData =()=>{
+    localStorage.setItem("list", JSON.stringify(formationsList))
+}
+
+const louadFormation = async () => {
+    const savedData = localStorage.getItem("list")
+    if(savedData) {
+        formationsList = JSON.parse(savedData)
+    } else {
+        const reponse = await fetch("./formations.json");
+        formationsList = await reponse.json();
+        saveFormationsData();
+    }
+    
+
+
+    renderFormations();
+}
+
 
 const creatCardHtmlFormation = (formation) => {
     return `
@@ -14,28 +64,77 @@ const creatCardHtmlFormation = (formation) => {
             <div class="progress-container">
                 <div class="progress-header">
                     <span>Participants: ${formation.participants.length} / ${formation.capacity}</span>
-                    <span>${((formation.participants.length/formation.capacity)*100).toFixed(0)}%</span>
+                    <span>${((formation.participants.length / formation.capacity) * 100).toFixed(0)}%</span>
                 </div>
+               
                 <div class="progress-bar">
-                    <div class="progress-fill"></div>
+                    <div 
+                        class="progress-fill" 
+                        style="width: ${(formation.participants.length / formation.capacity * 100).toFixed(0)}%;">
+                    </div>
                 </div>
+                
             </div>
             <button
-                class="bg-[#140BFF] text-white py-2 rounded-xl font-medium hover:bg-blue-300 transition duration-300">
+                data-formation-id="${formation.id}"
+                id="modal_${formation.id}"
+                ${formation.participants.length === formation.capacity ? "disabled": ""}
+
+                class="inscrire-btn bg-[#140BFF] text-white py-2 rounded-xl font-medium hover:bg-blue-300 transition duration-300">
                 S'inscrire
             </button>
+            
         </div>
     `;
 }
 
-async function louadFormation(){
-    const reponse= await fetch("./formations.json");
-    const data = await reponse.json();
-    // data.forEach(formation => {
-    //     cardsContainer.innerHTML+= creatCardHtmlFormation (formation);
-    // });
 
-    cardsContainer.innerHTML = data.map((f) => creatCardHtmlFormation(f)).join("") 
+
+const modalActions = async () => {
+    const Envoyer = document.getElementById('btn-envoyer');
+
+    Envoyer.addEventListener('click', () => {
+        const  inputName=document.getElementById("inputName");
+        const  inputDate=document.getElementById("inputDate");
+        const  inputAdresse=document.getElementById("inputAdresse");
+        const  inputVille=document.getElementById("inputVille");
+        const  inputPhone=document.getElementById("inputPhone");
+        const  inputEmail=document.getElementById("inputEmail");
+
+        const formationId = modal_continaire.dataset.formationId;
+        const formation = formationsList.find((f) => f.id === formationId)
+        if(formation) {
+            formation.participants.push("user")
+            saveFormationsData();
+            renderFormations();
+        }
+        // 
+
+        // clear inputs
+        inputName.value=""
+        inputDate.value=""
+        inputAdresse.value=""
+        inputVille.value=""
+        inputPhone.value=""
+        inputEmail.value=""
+
+       
+
+        modal_continaire.classList.remove('afficheFormulaire');
+         modal_continaire.removeAttribute('data-formation-id')
+    });
+
+
+
 }
 
-louadFormation();
+
+const initMyApp = async () => {
+    await louadFormation();
+    await modalActions();
+}
+
+
+initMyApp();
+
+

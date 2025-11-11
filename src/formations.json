@@ -1,6 +1,7 @@
 [
     {
         "id": "form_1",
+        "id_close":"form_11",
         "theme": "Développement Web Moderne",
         "duration": 12,
         "trainer": "Sofia Karim",
@@ -114,8 +115,4 @@
             "user_ai5"
         ]
     }
-
-
-
-
-
+]
