@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+
+  <body class="">
+    <header class="flex justify-between items-center py-1.5 px-10 font-medium max-[600px]:px-3 ">
+        <h2><samp class="text-blue-500 uppercase">new</samp>project</h2>
+        <nav class="flex gap-3 max-[600px]:hidden ">
+            <a href="index.html" class="hover:text-blue-600 transition-all duration-600">Acceuil</a>
+            <a href="formation.html" class="hover:text-blue-600 transition-all duration-600">Formation</a>
+            <a href="evenments.html" class="hover:text-blue-600 transition-all duration-600">Evenement</a>
+            <a href="" class="hover:text-blue-600 transition-all duration-600">Mini jeux</a>
+        </nav>
+        <div class="btn-login max-[600px]:hidden">
+            <a href="login.html"
+                class="text-blue-600 border border-blue-600 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700">log
+                in</a>
+            <a
+                class="bg-blue-400 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700">sing
+                up</a>
+        </div>
+        
+        <div class="version-mobile hidden  flex-col  gap-3">
+           
+            <a href="index.html" class="hover:text-blue-600 transition-all duration-600">Acceuil</a>
+            <a href="formation.html" class="hover:text-blue-600 transition-all duration-600">Formation</a>
+            <a href="evenments.html" class="hover:text-blue-600 transition-all duration-600">Evenement</a>
+            <a href="" class="hover:text-blue-600 transition-all duration-600">Mini jeux</a>
+            <button
+                class="text-blue-600 border border-blue-600 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700">log
+                in</button>
+            <button
+                class="bg-blue-400 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700">sing
+                up</button>
+        
+        
+        </div>
+        <div class="icon hidden max-[600px]:block">
+           <i class="fa-solid fa-bars text-3xl"></i>
+        </div>
+        <script>
+            const navbar = document.querySelector('nav');
+            const buttons = document.querySelector('.btn-login');
+            const icon = document.querySelector('.icon');
+            const versionMobile = document.querySelector('.version-mobile');
+           
+            icon.addEventListener('click',()=>{
+              const isActive = versionMobile.classList.toggle('hidden');
+              if(isActive){
+                icon.innerHTML = '<i class="fa-solid fa-bars text-3xl"></i>';
+              }else{
+                icon.innerHTML = '<i class="fa-solid fa-x text-3xl"></i>';
+                
+              }
+            
+
+            })
+        </script>
+    </header>
+    <!-- Header -->
+    <main
+      class="text-center bg-linear-to-r from-cyan-500 to-blue-500 w-full h-lvh box-border"
+    >
+      <span class="block text font-bold text-white text-8xl"
+        >Découvrez nos</span
+      >
+      <span class="block text font-bold text-white text-8xl">Événements</span>
+      <p class="text-xl py-10 text-white">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
+      </p>
+      <input
+        id="search"
+        type="text"
+        placeholder="Recherche un evenment "
+        class="w-3/4 h-17 rounded-lg px-7 bg-amber-50"
+      />
+    </main>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <defs>
+        <linearGradient id="grad" x1="0%" x2="100%">
+          <stop
+            offset="0%"
+            style="stop-color: oklch(72.236% 0.12981 217.989); stop-opacity: 1"
+          />
+          <stop
+            offset="100%"
+            style="stop-color: oklch(0.6187 0.2067 259.23); stop-opacity: 1"
+          />
+        </linearGradient>
+      </defs>
+      <path
+        fill="url(#grad)"
+        fill-opacity="1"
+        d="M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,208C672,203,768,117,864,101.3C960,85,1056,139,1152,160C1248,181,1344,171,1392,165.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+      ></path>
+    </svg>
+    <h1 class="font-bold text-4xl text-center w-full">Events A venire</h1>
+    <div class="w-full flex bg-white-950 justify-evenly h-full">
+      <div
+        class="w-1/4 h-60 mt-10 mb-20 rounded-2xl bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-hard-light relative animate-pulse"
+      >
+        <button class="bg-amber-300 rounded-2xl w-30 absolute top-3 right-3">
+          demain
+        </button>
+      </div>
+      <div
+        class="w-1/4 bg-amber-600 h-60 mt-10 mb-20 rounded-2xl relative bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+      >
+        <button class="bg-amber-300 rounded-2xl w-30 absolute top-3 right-3">
+          Feautred
+        </button>
+      </div>
+      <div
+        class="w-1/4 bg-amber-600 h-60 mt-10 mb-20 rounded-2xl relative bg-no-repeat transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')]"
+      >
+        <button class="bg-amber-300 rounded-2xl w-30 absolute top-3 right-3">
+          Feautred
+        </button>
+      </div>
+    </div>
+    <!-- buttons -->
+    <h1 class="font-bold text-4xl text-center w-full">Events Actual</h1>
+    <div class="list-btns flex justify-around h-20 w-full">
+      <button
+        class="conference bg-[#00b7db] h-10 rounded-3xl w-30 hover:bg-[#2b80ff] focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-opacity-75"
+        value="conférence"
+      >
+        conference</button
+      ><button
+        class="atelier bg-[#00b7db] h-10 rounded-3xl w-30 hover:bg-[#2b80ff] focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-opacity-75"
+        value="atelier"
+      >
+        atelier</button
+      ><button
+        class="club bg-[#00b7db] h-10 rounded-3xl w-30 hover:bg-[#2b80ff] focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-opacity-75"
+        value="club"
+      >
+        club</button
+      ><button
+        class="autre bg-[#00b7db] h-10 rounded-3xl w-30 hover:bg-[#2b80ff] focus:outline-none focus:ring-2 focus:ring-black-500 focus:ring-opacity-75"
+        value="autre"
+      >
+        autre
+      </button>
+    </div>
+
+    <!-- container evenments  -->
+    <div class="events grid w-full grid-cols-3 gap-10"></div>
+    <!-- cree un evenment -->
+    <main
+      class="text-center bg-linear-to-r from-cyan-500 to-blue-500 w-full h-lvh box-border mt-10"
+    >
+      <span class="block text font-bold text-white text-8xl"
+        >Vous organisez un événement ?</span
+      >
+
+      <p class="text-xl py-10 text-white">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
+      </p>
+      <button
+        onclick="navigateToForm('./formEven.html')"
+        class="creer w-80 h-20 bg-white font-bold text-3xl rounded-2xl hover:bg-black hover:text-[#009ff0] transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+      >
+        Creer un evenement
+      </button>
+    </main>
+     <footer class="bg-[#0f172b] w-full py-1.5 px-10 text-white">
+        <div class="container mt-16">
+            <div class="flex  justify-between border-b border-b-blue-950 pb-10 max-[600px]:flex-col">
+                <div class="flex flex-col gap-2 ">
+                    <h2><samp class="text-blue-500 uppercase">new</samp>project</h2>
+                    <p class="text-gray-400">Empowering learners worldwide with accessible ,<br> high-quality education.  Join our community and<br>
+                        unlock your potential.</p>
+                    <div>
+                        <!-- icons -->
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 ">
+                    <h2>Quick Links</h2>
+                    <div class="flex flex-col gap-2 text-gray-400" >
+                        <a href="">Home</a><a href="">Courses</a><a href="">Instructors</a><a href="">Contact</a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 ">
+                    <h2>Categories</h2>
+                    <div class="flex flex-col gap-2 text-gray-400">
+                        <a href="">Web Development</a><a href="">Data Science</a><a href="">Digital Marketing</a><a href="">Graphic Design</a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 ">
+                    <h2>Support</h2>
+                    <div class="flex flex-col gap-2 text-gray-400">
+                        <a href="">Help Center</a><a href="">Student Support</a><a href="">Privacy Policy</a><a href="">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="text-center my-2">© 2025 NEWprojet. All rights reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+    <script src="events.js"></script>
+  </body>
+</html>

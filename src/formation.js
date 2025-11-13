@@ -53,9 +53,9 @@ const louadFormation = async () => {
 const creatCardHtmlFormation = (formation) => {
     return `
         <div
-            class=" bg-white  rounded-2xl p-4 flex flex-col justify-between w-70 hover:shadow-2xl transition-shadow duration-300 box-content">
+            class=" bg-white  rounded-2xl p-4 flex flex-col justify-between w-70 hover:shadow-2xl transition-shadow duration-300 box-content dark:bg-black dark:text-amber-50  dark:border-b dark:border-b-gray-400  dark:border-t dark:border-t-gray-400">
             <div>
-                <h3 class="text-2xl font-bold  text-[#1C1D7F] mb-4">${formation.theme}</h3>
+                <h3 class="text-2xl font-bold  text-[#1C1D7F]  dark:text-amber-50 mb-4">${formation.theme}</h3>
             </div>
             <div class="flex justify-evenly  text-gray-600 text-sm mb-6">
                 <div><i class="fa-solid fa-calendar-days"></i>${formation.duration} Semaines</div>
