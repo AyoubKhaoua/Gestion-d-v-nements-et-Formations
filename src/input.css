@@ -1,8 +1,7 @@
 
 @import "tailwindcss";
-:root {
-  --grad: linear-gradient(to right, #00b8d9, #2b7fff);
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
-@import "tailwindcss";
+
+
 

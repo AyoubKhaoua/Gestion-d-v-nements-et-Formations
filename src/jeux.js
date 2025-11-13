@@ -5,30 +5,40 @@ let score = 0;
 const showScore = document.querySelector('.score');
 const nomberEasy = document.querySelector('.nomberEasy');
 const showNomber = document.createElement('p');
+const nextButton = document.querySelector('.nextButton');
+
 let options;
 let divP = document.querySelector('.word');
 const div = document.querySelector('.alphabet');
-showScore.textContent = score;
+showScore.textContent = `your score : ${score}`;
 const alphabet = [...'abcdefghijklmnopqrstuvwxyz'];
 
+nextButton.addEventListener('click',()=>{
+     const removeHint = element.querySelector('p');
+                    console.log(removeHint);
+                    divP.querySelectorAll('div').forEach(item => {
+                        item.remove();
+                    })
+                    removeHint.remove();
+                    getData();
+})
 async function getRequest() {
     const res = await fetch("https://mocki.io/v1/f64d2ff5-72de-47ea-a59d-c8e8bfae08ef");
     const data = res.json();
     return data;
 }
 async function getData() {
+    nextButton.textContent = "";
     let count = 5;
-
     options = await getRequest()
     console.log(options);
     const choix = Math.floor(Math.random() * words.length);
     let word = options[choix].word;
 
     console.log(word);
-
+    
     let hint = document.createElement('p');
     hint.textContent = options[choix].hint;
-    hint.style.border= "1px solid #5a76e6";
     hint.style.padding = "5px";
     element.append(hint)
 
@@ -46,15 +56,16 @@ async function getData() {
         item.remove();
     })
     alphabet.forEach(alph => {
-        showNomber.textContent = count;
+        showNomber.textContent = `number trys : ${count}`;
         nomberEasy.append(showNomber);
 
         let button = document.createElement('button');
         button.textContent = alph;
-        button.style.backgroundColor = "#5a76e6";
+        button.style.backgroundColor = "#202938";
+        button.style.color = "white";
         button.style.borderRadius = "5px"
         button.style.alignItems = "center"
-        button.style.width='2rem';
+        // button.style.width='2rem';
         button.style.height='3rem';
         let check = [];
         button.addEventListener('click', () => {
@@ -91,24 +102,13 @@ async function getData() {
                 let res = check.join('');
                 if (res === word) {
                     score+=10;
-                    showScore.textContent = score;
-                    const removeHint = element.querySelector('p');
-                    console.log(removeHint);
-                    divP.querySelectorAll('div').forEach(item => {
-                        item.remove();
-                    })
-                    removeHint.remove();
-                    getData();
+                    showScore.textContent = `your score is ${score}` ;
+                    nextButton.textContent = "next";
                 }
             } else {
-                const removeHint = element.querySelector('p');
-                console.log(removeHint);
-                divP.querySelectorAll('div').forEach(item => {
-                    item.remove();
-                })
-                removeHint.remove();
-                getData();
-            } showNomber.textContent = count;
+                nextButton.textContent = "pay again";
+                
+            } showNomber.textContent = `number trys : ${count}`;
         })
 
 
