@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -15,25 +15,14 @@
     <script src="https://kit.fontawesome.com/a680a19743.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-gray-100 min-h-screen ">
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="./output.css" rel="stylesheet">
-        <title>Document</title>
-    </head>
-
-    <body>
-        <header class="flex justify-between items-center py-1.5 px-10 font-medium max-[600px]:px-3 ">
+<body>
+    <header class="flex justify-between items-center py-1.5 px-10 font-medium max-[600px]:px-3 ">
         <h2><samp class="text-blue-500 uppercase">new</samp>project</h2>
         <nav class="flex gap-3 max-[600px]:hidden ">
             <a href="index.html" class="hover:text-blue-600 transition-all duration-600">Acceuil</a>
             <a href="formation.html" class="hover:text-blue-600 transition-all duration-600">Formation</a>
             <a href="evenments.html" class="hover:text-blue-600 transition-all duration-600">Evenement</a>
-            <a href="" class="hover:text-blue-600 transition-all duration-600">Mini jeux</a>
+            <a href="miniJeux.html" class="hover:text-blue-600 transition-all duration-600">Mini jeux</a>
         </nav>
         <div class="btn-login max-[600px]:hidden">
             <a href="login.html"
@@ -43,9 +32,7 @@
                 class="bg-blue-400 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700">sing
                 up</a>
         </div>
-        
         <div class="version-mobile hidden  flex-col  gap-3">
-           
             <a href="index.html" class="hover:text-blue-600 transition-all duration-600">Acceuil</a>
             <a href="formation.html" class="hover:text-blue-600 transition-all duration-600">Formation</a>
             <a href="evenments.html" class="hover:text-blue-600 transition-all duration-600">Evenement</a>
@@ -56,33 +43,12 @@
             <button
                 class="bg-blue-400 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700">sing
                 up</button>
-        
-        
         </div>
         <div class="icon hidden max-[600px]:block">
-           <i class="fa-solid fa-bars text-3xl"></i>
+            <i class="fa-solid fa-bars text-3xl"></i>
         </div>
-        <script>
-            const navbar = document.querySelector('nav');
-            const buttons = document.querySelector('.btn-login');
-            const icon = document.querySelector('.icon');
-            const versionMobile = document.querySelector('.version-mobile');
-           
-            icon.addEventListener('click',()=>{
-              const isActive = versionMobile.classList.toggle('hidden');
-              if(isActive){
-                icon.innerHTML = '<i class="fa-solid fa-bars text-3xl"></i>';
-              }else{
-                icon.innerHTML = '<i class="fa-solid fa-x text-3xl"></i>';
-                
-              }
-            
-
-            })
-        </script>
     </header>
 
-    </html>
     <div class="formation-headr">
         <h1 class=" text-5xl font-bold text-center mb-8 text-white ">Tous Les Formations</h1>
         <p class="flex justify-center items-center  text-center text-1xl text-white ">Découvrez nos cours les plus
@@ -91,11 +57,45 @@
             par des professeurs experts. Bénéficiez d'un tutorat personnalisé et atteignez vos objectifs académiques.
         </p>
     </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" id="cards-container"></div>
 
+    <div class="modal_continaire" id="modal_continaire">
+                <div class="modal">
+                    <div class="container">
+                    <form id="signupForm" novalidate>
+                        <div class="form-group">
+                            <label for="Nom complet">Nom Complet</label>
+                            <input type="text" id="inputName" name="name" placeholder="Entrez votre nom complet" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="naissance">Date de naissance</label>
+                            <input type="date" id="inputDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="Adresse">Adresse</label>
+                            <input type="text"  id="inputAdresse">
+                        </div>
+                        <div class="form-group">
+                            <label for="Ville">Ville</label>
+                            <input type="text"  id="inputVille">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="inputPhone" name="phone" placeholder="+ 212" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adresse e-mail </label>
+                            <input type="email" id="inputEmail" name="email" placeholder="exemple@mail.com" required>
+                        </div>
+                        
+                        <p id="message" style="color:red; font-weight:bold; margin-top:10px;"></p>
+                        <p id="valider" style="color:rgb(63, 150, 5); font-weight:bold; margin-top:10px;"></p>
+                    </form>
+                    </div>
+                    <button id="btn-envoyer" class=" bg-[#140BFF] text-white py-2 px-4 rounded-xl font-medium hover:bg-blue-300 transition duration-300">Envoyer</button>
+                </div>
+            </div>
 
-    <div id="cards-container" >
-
-    </div>
      <footer class="bg-[#0f172b] w-full py-1.5 px-10 text-white">
         <div class="container mt-16">
             <div class="flex  justify-between border-b border-b-blue-950 pb-10 max-[600px]:flex-col">
@@ -133,6 +133,7 @@
         </div>
     </footer>
     <script src="formation.js"></script>
+    
 </body>
 
 </html>
