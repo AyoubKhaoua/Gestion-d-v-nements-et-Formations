@@ -1,9 +1,10 @@
 fetch("events.json")
   .then((res) => res.json())
   .then((data) => {
-    showEvents(data);
-    filterEvent(data);
-    findEvent(data);
+    let events = JSON.parse(localStorage.getItem("events"));
+    showEvents(events);
+    filterEvent(events);
+    findEvent(events);
     changeForm();
   });
 

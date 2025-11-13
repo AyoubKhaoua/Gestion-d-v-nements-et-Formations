@@ -1,10 +1,5 @@
-let listEvents = [];
-fetch("events.json")
-  .then((res) => res.json())
-  .then((data) => {
-    listEvents = data;
-    changeForm();
-  });
+changeForm();
+//
 
 //creer un evinment
 //initial the content the form
@@ -13,7 +8,7 @@ let contentForm = `    <div>
             >title</label
           >
           <div class="mt-1">
-            <input type="text" class="w-90 ml-6.5 h-10 border-2 rounded-xl" />
+            <input type="text"  id="title" name="title"  class="w-full h-10 border-2 rounded-xl" />
           </div>
         </div>
         <div class="mt-3">
@@ -21,7 +16,7 @@ let contentForm = `    <div>
             >date</label
           >
           <div>
-            <input type="date" class="w-90 ml-6.5 h-10 border-2 rounded-xl" />
+            <input type="date" id="date" name="date" class="w-full h-10 border-2 rounded-xl" />
           </div>
         </div>
         <div class="mt-3">
@@ -29,7 +24,7 @@ let contentForm = `    <div>
             >location</label
           >
           <div>
-            <input type="text" class="w-90 ml-6.5 h-10 border-2 rounded-xl" />
+            <input type="text"  name="location" id="location" class="w-full h-10 border-2 rounded-xl" />
           </div>
         </div>
         <div class="mt-3">
@@ -40,7 +35,9 @@ let contentForm = `    <div>
             <select
               name="type"
               id="select-type"
-              class="w-90 ml-6.5 h-10 border-2 rounded-xl"
+              class="w-full h-10 border-2 rounded-xl"
+              required
+              onclick=changeForm()
             >
               <option value=""></option>
               <option value="autre">autre</option>
@@ -50,18 +47,20 @@ let contentForm = `    <div>
             </select>
           </div>
         </div>
-        <div class="mt-3">
-          <label for="" class="block font-medium text-gray-700 ml-6.5"
+       <div>
+          <label for="" class="block font-medium text-gray-700"
             >description</label
           >
           <div>
             <textarea
+              name="description"
               placeholder="description"
               cols="30"
               rows="6"
-              class="w-90 ml-6.5 border-2 rounded-xl"
+              class="w-full border-2 rounded-xl"
             ></textarea>
           </div>
+        </div>
         </div>`;
 
 //1-navige into formulaire for create event
@@ -71,12 +70,17 @@ const navigateToForm = function (url) {
 
 //2-if chnage the type change the content of formulaire
 //2-1-1select the formulire and the inpute select
-let selectInput = document.getElementById("select-type");
-let form = document.getElementById("form");
-changeForm = () => {
+
+function changeForm() {
+  let selectInput = document.getElementById("select-type");
+  let form = document.getElementById("form");
   selectInput.addEventListener("change", (e) => {
+    let titleValue = document.getElementById("title")?.value || "";
+    let dateValue = document.getElementById("date")?.value || "";
+    let locationValue = document.getElementById("location")?.value || "";
+    let valueSelect = selectInput.value;
+
     if (e.target.value == "conférence") {
-      form.innerHTML = "";
       form.innerHTML =
         contentForm +
         `
@@ -85,7 +89,7 @@ changeForm = () => {
             >speaker</label
           >
           <div class="mt-1">
-            <input type="text" class="w-90 ml-6.5 h-10 border-2 rounded-xl" />
+            <input type="text" id="speaker" class="w-full h-10 border-2 rounded-xl" name="speaker" />
           </div>
         </div>
          <div>
@@ -93,7 +97,7 @@ changeForm = () => {
             >duration</label
           >
           <div class="mt-1">
-            <input type="number" class="w-90 ml-6.5 h-10 border-2 rounded-xl" />
+            <input type="number" id="duration" class="w-full h-10 border-2 rounded-xl" name="duration" />
           </div>
         </div>
          <div>
@@ -101,13 +105,20 @@ changeForm = () => {
             >registrationLink</label
           >
           <div class="mt-1">
-            <input type="text" class="w-90 ml-6.5 h-10 border-2 rounded-xl " placeholder='entre registrationLink'/>
+            <input type="text" id="registrationLink" class="w-full h-10 border-2 rounded-xl " name="registrationLink" placeholder='entre registrationLink'/>
           </div>
+        </div>
+         <div class="w-full">
+          <button
+            class="text-xl w-full h-12 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 transition "
+            
+          >
+            Submit
+          </button>
         </div>
 
         `;
     } else if (e.target.value == "atelier") {
-      form.innerHTML = "";
       form.innerHTML =
         contentForm +
         `
@@ -116,7 +127,7 @@ changeForm = () => {
             >materials</label
           >
           <div class="mt-1">
-            <input type="text" class="w-90 ml-6.5 h-10 border-2 rounded-xl" />
+            <input type="text" id="materials" class="w-full h-10 border-2 rounded-xl" name="materials" />
           </div>
         </div>
          <div>
@@ -124,7 +135,7 @@ changeForm = () => {
             >skillLevel</label
           >
           <div class="mt-1">
-            <input type="text" class="w-90 ml-6.5 h-10 border-2 rounded-xl" />
+            <input type="text" id="skillLevel" class="w-full h-10 border-2 rounded-xl" name="skillLevel" />
           </div>
         </div>
          <div>
@@ -132,13 +143,19 @@ changeForm = () => {
             >maxParticipants</label
           >
           <div class="mt-1">
-            <input type="number" class="w-90 ml-6.5 h-10 border-2 rounded-xl " />
-          </div>
+            <input type="number" id="maxParticipants" class="w-full h-10 border-2 rounded-xl " name="maxParticipants" />
+          </div> <div class="w-full">
+          <button
+            class="text-xl w-full h-12 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 transition"
+         
+          >
+            Submit
+          </button>
         </div>
+        
 
         `;
     } else if (e.target.value == "club") {
-      form.innerHTML = "";
       form.innerHTML =
         contentForm +
         `
@@ -147,7 +164,7 @@ changeForm = () => {
             >frequency</label
           >
           <div class="mt-1">
-            <input type="text" class="w-90 ml-6.5 h-10 border-2 rounded-xl" />
+            <input type="text" id="frequency" class="w-full h-10 border-2 rounded-xl" name="frequency" />
           </div>
         </div>
          <div>
@@ -155,7 +172,7 @@ changeForm = () => {
             >contact</label
           >
           <div class="mt-1">
-            <input type="email" class="w-90 ml-6.5 h-10 border-2 rounded-xl" />
+            <input type="email" id="contact" class="w-full h-10 border-2 rounded-xl" name="contact" />
           </div>
         </div>
          <div>
@@ -163,13 +180,20 @@ changeForm = () => {
             >membershipFee</label
           >
           <div class="mt-1">
-            <input type="number" class="w-90 ml-6.5 h-10 border-2 rounded-xl " placeholder='membershipFee'/>
+            <input type="number" id="membershipFee" class="w-full h-10 border-2 rounded-xl " name="membershipFee" placeholder='membershipFee'/>
           </div>
+        </div>
+         <div class="w-full">
+          <button
+            class="text-xl w-full h-12 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 transition"
+           
+          >
+            Submit
+          </button>
         </div>
 
         `;
     } else {
-      form.innerHTML = "";
       form.innerHTML =
         contentForm +
         `
@@ -178,7 +202,7 @@ changeForm = () => {
             >customFieldLabel</label
           >
           <div class="mt-1">
-            <input type="text" class="w-90 ml-6.5 h-10 border-2 rounded-xl" />
+            <input type="text" id="customFieldLabel" name="customFieldLabel" class="w-full h-10 border-2 rounded-xl" />
           </div>
         </div>
          <div>
@@ -186,14 +210,53 @@ changeForm = () => {
             >customFieldValue</label
           >
           <div class="mt-1">
-            <input type="text" class="w-90 ml-6.5 h-10 border-2 rounded-xl" />
+            <input type="text" id="customFieldValue" name="customFieldValue" class="w-full h-10 border-2 rounded-xl" />
           </div>
+        </div>
+         <div class="w-full">
+          <button
+            class="text-xl w-full h-12 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 transition"
+           
+          >
+            Submit
+          </button>
         </div>
         
 
         `;
     }
+    document.getElementById("location").value = locationValue;
+    document.getElementById("date").value = dateValue;
+    document.getElementById("title").value = titleValue;
+    document.getElementById("select-type").value = valueSelect;
   });
-};
-//console.log(selectInput);
-//changeForm();
+}
+
+//for add evenment
+//declare id
+
+let form = document.getElementById("form");
+form.addEventListener("submit", (e) => {
+  let events = JSON.parse(localStorage.getItem("events"));
+  e.preventDefault();
+
+  let formD = new FormData(form);
+  let objetData = Object.fromEntries(formD.entries());
+  let id = events.length > 0 ? events[events.length - 1].id + 1 : 1;
+  objetData.id = id;
+
+  addLocal(objetData);
+  console.log(objetData);
+  console.log(id);
+  form.reset();
+  navigateToForm("Admin.html");
+});
+
+//function ADD Event into local storsge
+function addLocal(newData) {
+  var oldItems = JSON.parse(localStorage.getItem("events")) || [];
+
+  oldItems.push(newData);
+
+  localStorage.setItem("events", JSON.stringify(oldItems));
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header
+      class="flex justify-between items-center py-1.5 px-10 font-medium max-[600px]:px-3"
+    >
+      <h2><samp class="text-blue-500 uppercase">new</samp>project</h2>
+      <nav class="flex gap-3 max-[600px]:hidden">
+        <a
+          href="index.html"
+          class="hover:text-blue-600 transition-all duration-600"
+          >Acceuil</a
+        >
+        <a
+          href="formation.html"
+          class="hover:text-blue-600 transition-all duration-600"
+          >Formation</a
+        >
+        <a
+          href="evenments.html"
+          class="hover:text-blue-600 transition-all duration-600"
+          >Evenement</a
+        >
+        <a href="" class="hover:text-blue-600 transition-all duration-600"
+          >Mini jeux</a
+        >
+      </nav>
+      <div class="btn-login max-[600px]:hidden">
+        <a
+          href="login.html"
+          class="text-blue-600 border border-blue-600 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700"
+          >log in</a
+        >
+        <a
+          class="bg-blue-400 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700"
+          >sing up</a
+        >
+      </div>
+
+      <div class="version-mobile hidden flex-col gap-3">
+        <a href="" class="hover:text-blue-600 transition-all duration-600"
+          >Acceuil</a
+        >
+        <a href="" class="hover:text-blue-600 transition-all duration-600"
+          >Formation</a
+        >
+        <a href="" class="hover:text-blue-600 transition-all duration-600"
+          >Evenement</a
+        >
+        <a href="" class="hover:text-blue-600 transition-all duration-600"
+          >Mini jeux</a
+        >
+        <button
+          class="text-blue-600 border border-blue-600 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700"
+        >
+          log in
+        </button>
+        <button
+          class="bg-blue-400 px-6 py-1 rounded-sm hover:bg-[#1C1D7F] hover:text-amber-50 transition-all duration-700"
+        >
+          sing up
+        </button>
+      </div>
+      <div class="icon hidden max-[600px]:block">
+        <i class="fa-solid fa-bars text-3xl"></i>
+      </div>
+      <script>
+        const navbar = document.querySelector("nav");
+        const buttons = document.querySelector(".btn-login");
+        const icon = document.querySelector(".icon");
+        const versionMobile = document.querySelector(".version-mobile");
+
+        icon.addEventListener("click", () => {
+          const isActive = versionMobile.classList.toggle("hidden");
+          if (isActive) {
+            icon.innerHTML = '<i class="fa-solid fa-bars text-3xl"></i>';
+          } else {
+            icon.innerHTML = '<i class="fa-solid fa-x text-3xl"></i>';
+          }
+        });
+      </script>
+    </header>
+    <form id="form">
+
+    </form>
+
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 mt-15">
+     
+     
+          </div class='flex  justify-between md:order-2'>
+            <input
+              type="text"
+              id="search-navbar"
+              class="  p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Search..."
+            />
+            <button onclick="navigateToForm('./formEven.html')" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"  >Add</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class=" formUp relative overflow-x-auto shadow-md sm:rounded-lg mt-7">
+      <table
+        class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+      >
+        <thead
+          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        >
+          <tr>
+            <th scope="col" class="px-6 py-3">title name</th>
+            <th scope="col" class="px-6 py-3">date</th>
+            <th scope="col" class="px-6 py-3">location</th>
+            <th scope="col" class="px-6 py-3">type</th>
+            <th scope="colgroup" class="px-6 py-6 text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+         
+         
+        </tbody>
+      </table>
+    </div>
+    <footer class="bg-[#0f172b] w-full py-1.5 px-10 text-white mt-32">
+    <div class="container mt-16">
+      <div
+        class="flex justify-between border-b border-b-blue-950 pb-10 max-[600px]:flex-col"
+      >
+        <div class="flex flex-col gap-2">
+          <h2><samp class="text-blue-500 uppercase">new</samp>project</h2>
+          <p class="text-gray-400">
+            Empowering learners worldwide with accessible ,<br />
+            high-quality education. Join our community and<br />
+            unlock your potential.
+          </p>
+          <div>
+            <!-- icons -->
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <h2>Quick Links</h2>
+          <div class="flex flex-col gap-2 text-gray-400">
+            <a href="">Home</a><a href="">Courses</a><a href="">Instructors</a
+            ><a href="">Contact</a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <h2>Categories</h2>
+          <div class="flex flex-col gap-2 text-gray-400">
+            <a href="">Web Development</a><a href="">Data Science</a
+            ><a href="">Digital Marketing</a><a href="">Graphic Design</a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <h2>Support</h2>
+          <div class="flex flex-col gap-2 text-gray-400">
+            <a href="">Help Center</a><a href="">Student Support</a
+            ><a href="">Privacy Policy</a><a href="">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="text-center my-2">© 2025 NEWprojet. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+ <script src="Admin.js"></script>
+  </body>
+  
+</html>
